@@ -1,5 +1,5 @@
+import { listMenu } from "@/constants/menu/listMenu.menu";
 import listSocialMenu from "@/constants/menu/listSocial.menu";
-import listSocialGmail from "@/constants/menu/listSocialGmail";
 
 const HomePage = () => {
     return (
@@ -14,7 +14,7 @@ const HomePage = () => {
                 </div>
 
                 <div className="mt-6 md:mt-10 text-2xl md:text-2xl lg:text-5xl space-y-2">
-                    {listSocialGmail.map((social, index) => (
+                    {listSocialMenu.map((social, index) => (
                         <a
                             key={index}
                             href={social.href}
@@ -22,7 +22,7 @@ const HomePage = () => {
                             rel="noopener noreferrer"
                             className="hover:underline decoration-slate-100 underline-none"
                         >
-                            {social.icon} thanhtung2888@gmail.com
+                            {listMenu[5]?.title} thanhtung2888@gmail.com
                         </a>
                     ))}
                 </div>

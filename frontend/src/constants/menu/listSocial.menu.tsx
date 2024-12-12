@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram, faTelegramPlane, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FACEBOOK_LINK, INSTAGRAM_LINK, YOUTUBE_LINK } from "../directions/social.direction";
 
 // Interface definition
@@ -27,7 +27,11 @@ const listSocialMenu: ISocialMenu[] = [
     href: `${YOUTUBE_LINK}`,
     icon: <FontAwesomeIcon icon={faYoutube} />
   },
-
+  {
+    title: "Gmail",
+    href: "mailto:thanhtung2888@gmail.com?subject=Inquiry&body=Hello%20Thanh%20Tung,%0D%0A%0D%0AI%20have%20a%20question%20regarding...",
+    icon: <FontAwesomeIcon icon={faTelegramPlane} />,
+  }
 ];
 
 export default listSocialMenu;

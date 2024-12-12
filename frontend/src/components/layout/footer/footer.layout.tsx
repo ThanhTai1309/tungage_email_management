@@ -1,7 +1,5 @@
 import { listMenu } from "@/constants/menu/listMenu.menu";
 import listSocialMenu from "@/constants/menu/listSocial.menu";
-import listSocialGmail from "@/constants/menu/listSocialGmail";
-
 const Footer = () => {
     return (
         <div className="bg-black mt-20 border-t-2">
@@ -38,7 +36,7 @@ const Footer = () => {
                             <a className="hover:text-indigo-600 text-white" href="#">DISTRICT 2, HO CHI MINH CITY</a>
                         </li>
                         <li className="my-2 text-white no-underline">
-                            {listSocialGmail.map((social, index) => (
+                            {listMenu.map((social, index) => (
                                 <a
                                     key={index}
                                     href={social.href}
@@ -46,7 +44,7 @@ const Footer = () => {
                                     rel="noopener noreferrer"
                                     className="hover:bg-b-200 decoration-slate-100 underline-none"
                                 >
-                                    {social.title} thanhtung2888@gmail.com
+                                    {listMenu[5]?.title} thanhtung2888@gmail.com
                                 </a>
                             ))}
                         </li>
