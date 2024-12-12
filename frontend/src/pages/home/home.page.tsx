@@ -1,4 +1,3 @@
-import { listMenu } from "@/constants/menu/listMenu.menu";
 import listSocialMenu from "@/constants/menu/listSocial.menu";
 
 const HomePage = () => {
@@ -14,17 +13,15 @@ const HomePage = () => {
                 </div>
 
                 <div className="mt-6 md:mt-10 text-2xl md:text-2xl lg:text-5xl space-y-2">
-                    {listSocialMenu.map((social, index) => (
-                        <a
-                            key={index}
-                            href={social.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:underline decoration-slate-100 underline-none"
-                        >
-                            {listMenu[5]?.title} thanhtung2888@gmail.com
-                        </a>
-                    ))}
+
+                    <a
+                        href={listSocialMenu.find(social => social.title === "Gmail")?.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline decoration-slate-100 underline-none"
+                    >
+                        {listSocialMenu.find(social => social.title === "Gmail")?.icon} thanhtung2888@gmail.com
+                    </a>
                 </div>
                 <div className="flex items-center justify-center space-x-5 mt-6">
                     {listSocialMenu.map((social, index) => (

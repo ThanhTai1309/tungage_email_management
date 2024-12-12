@@ -1,1 +1,0 @@
-export const GMAIL_LINK = 'https://www.gmail.com/tungage';

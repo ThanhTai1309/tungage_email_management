@@ -36,17 +36,14 @@ const Footer = () => {
                             <a className="hover:text-indigo-600 text-white" href="#">DISTRICT 2, HO CHI MINH CITY</a>
                         </li>
                         <li className="my-2 text-white no-underline">
-                            {listMenu.map((social, index) => (
-                                <a
-                                    key={index}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:bg-b-200 decoration-slate-100 underline-none"
-                                >
-                                    {listMenu[5]?.title} thanhtung2888@gmail.com
-                                </a>
-                            ))}
+                            <a
+                                href={listSocialMenu.find(social => social.title === "Gmail")?.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:bg-b-200 decoration-slate-100 underline-none"
+                            >
+                                {listMenu[5]?.title} thanhtung2888@gmail.com
+                            </a>
                         </li>
                     </ul>
                 </div>
