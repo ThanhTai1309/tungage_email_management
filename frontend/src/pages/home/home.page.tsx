@@ -1,4 +1,4 @@
-import React from "react";
+import listSocialMenu from "@/constants/menu/listSocial.menu";
 
 const HomePage = () => {
     return (
@@ -13,25 +13,28 @@ const HomePage = () => {
                 </div>
 
                 <div className="mt-6 md:mt-10 text-2xl md:text-2xl lg:text-5xl space-y-2">
-                    <div className="flex items-center space-x-2">
-                        <img width="48" height="48" src="https://img.icons8.com/fluency/48/sent.png" alt="sent" />
-                        <span>www.tungage.com</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                        <img width="48" height="48" src="https://img.icons8.com/color-glass/48/gmail.png" alt="gmail" />
-                        <span>@thanhtung2888@gmail.com</span>
-                    </div>
-                    <div className="flex items-center justify-center space-x-5 mt-6"> {/* Thêm mt-6 để tạo khoảng cách */}
-                        <a href="https://www.facebook.com/TuNgage" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt="Facebook" />
+
+                    <a
+                        href={listSocialMenu.find(social => social.title === "Gmail")?.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline decoration-slate-100 underline-none"
+                    >
+                        {listSocialMenu.find(social => social.title === "Gmail")?.icon} thanhtung2888@gmail.com
+                    </a>
+                </div>
+                <div className="flex items-center justify-center space-x-5 mt-6">
+                    {listSocialMenu.map((social, index) => (
+                        <a
+                            key={index}
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline decoration-slate-100 underline"
+                        >
+                            {social.icon}
                         </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram" />
-                        </a>
-                        <a href="https://www.youtube.com/@tungage" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.icons8.com/fluency/48/youtube-play.png" alt="YouTube" />
-                        </a>
-                    </div>
+                    ))}
                 </div>
             </div>
 
@@ -42,7 +45,7 @@ const HomePage = () => {
                     className="w-full h-full object-cover bg-black"
                 />
             </div>
-        </section>
+        </section >
     );
 };
 

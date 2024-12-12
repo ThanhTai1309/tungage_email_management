@@ -11,7 +11,7 @@ export const listMenu: IMenu[] = [
     href: `${HOME_PAGE}`,
   },
   {
-    title: "Freestyle Football",
+    title: "Freestyle",
     href: `${FREESTYLE_FOOTBALL_PAGE}`,
   },
   {
