@@ -1,0 +1,3 @@
+export const FACEBOOK_LINK = 'https://www.facebook.com/tungage';
+export const INSTAGRAM_LINK = 'https://www.instagram.com/tungage';
+export const YOUTUBE_LINK = 'https://www.youtube.com/tungage';
