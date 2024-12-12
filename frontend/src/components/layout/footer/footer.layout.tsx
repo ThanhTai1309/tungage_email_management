@@ -1,3 +1,7 @@
+import { listMenu } from "@/constants/menu/listMenu.menu";
+import listSocialMenu from "@/constants/menu/listSocial.menu";
+import listSocialGmail from "@/constants/menu/listSocialGmail";
+
 const Footer = () => {
     return (
         <div className="bg-black mt-20 border-t-2">
@@ -6,19 +10,19 @@ const Footer = () => {
                     <div className="text-sm uppercase text-indigo-600 font-bold">Menu</div>
                     <ul className="text-sm text-white">
                         <li className="my-2">
-                            <a className="hover:text-indigo-600" href="/home">Home</a>
+                            {listMenu[0]?.title}
                         </li>
                         <li className="my-2">
-                            <a className="hover:text-indigo-600" href="/freestyle-football">FreeStyle</a>
+                            {listMenu[1]?.title}
                         </li>
                         <li className="my-2">
-                            <a className="hover:text-indigo-600" href="/director">Director</a>
+                            {listMenu[2]?.title}
                         </li>
                         <li className="my-2">
-                            <a className="hover:text-indigo-600" href="/gallery">Gallery</a>
+                            {listMenu[3]?.title}
                         </li>
                         <li className="my-2">
-                            <a className="hover:text-indigo-600" href="/contact">Contact</a>
+                            {listMenu[4]?.title}
                         </li>
                     </ul>
                 </div>
@@ -33,30 +37,34 @@ const Footer = () => {
                         <li className="my-2">
                             <a className="hover:text-indigo-600 text-white" href="#">DISTRICT 2, HO CHI MINH CITY</a>
                         </li>
-                        <li className="my-2">
-                            <a
-                                className="hover:text-indigo-600 text-white"
-                                href="mailto:thanhtung2888@gmail.com?subject=Inquiry&body=Hello%20Thanh%20Tung,%0D%0A%0D%0AI%20have%20a%20question%20regarding..."
-                            >
-                                thanhtung2888@gmail.com
-                            </a>
+                        <li className="my-2 text-white no-underline">
+                            {listSocialGmail.map((social, index) => (
+                                <a
+                                    key={index}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:bg-b-200 decoration-slate-100 underline-none"
+                                >
+                                    {social.title} thanhtung2888@gmail.com
+                                </a>
+                            ))}
                         </li>
                     </ul>
                 </div>
             </div>
-            <div className="flex justify-center space-x-5 bg-black">
-                <a href="https://www.facebook.com/TuNgage" target="_blank" rel="noopener noreferrer">
-                    <img src="https://img.icons8.com/fluent/30/000000/facebook-new.png" alt="Facebook" />
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                    <img src="https://img.icons8.com/fluent/30/000000/instagram-new.png" alt="Instagram" />
-                </a>
-                {/* <a href="https://m.me/Tungage" target="_blank" rel="noopener noreferrer">
-                    <img src="https://img.icons8.com/fluent/30/000000/facebook-messenger--v2.png" alt="Messenger" />
-                </a> */}
-                <a href="https://www.youtube.com/@tungage" target="_blank" rel="noopener noreferrer">
-                    <img src="https://img.icons8.com/fluency/30/youtube-play.png" alt="Y" />
-                </a>
+            <div className="flex justify-center space-x-5 bg-black text-white p-4">
+                {listSocialMenu.map((social, index) => (
+                    <a
+                        key={index}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline decoration-slate-100 underline"
+                    >
+                        {social.icon}
+                    </a>
+                ))}
             </div>
             <div className="bg-black w-full text-white text-center py-5">
                 © Copyright 2024. All Rights Reserved.

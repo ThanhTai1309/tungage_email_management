@@ -26,7 +26,8 @@ const listSocialMenu: ISocialMenu[] = [
     title: "YouTube",
     href: `${YOUTUBE_LINK}`,
     icon: <FontAwesomeIcon icon={faYoutube} />
-  }
+  },
+
 ];
 
 export default listSocialMenu;
