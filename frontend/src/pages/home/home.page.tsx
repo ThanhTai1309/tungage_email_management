@@ -1,3 +1,4 @@
+import { MAIL_TO } from "@/constants/directions/contact-direct.direction";
 import listSocialMenu from "@/constants/menu/listSocial.menu";
 
 const HomePage = () => {
@@ -15,7 +16,7 @@ const HomePage = () => {
                 <div className="mt-6 md:mt-10 text-2xl md:text-2xl lg:text-5xl space-y-2">
 
                     <a
-                        href={listSocialMenu.find(social => social.title === "Gmail")?.href}
+                        href={`${MAIL_TO}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:underline decoration-slate-100 underline-none"
@@ -30,7 +31,7 @@ const HomePage = () => {
                             href={social.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:underline decoration-slate-100 underline"
+                            className="hover:underline decoration-slate-100 underline w-8 h-8"
                         >
                             {social.icon}
                         </a>

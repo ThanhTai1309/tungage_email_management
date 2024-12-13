@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faTelegramPlane, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { FACEBOOK_LINK, INSTAGRAM_LINK, YOUTUBE_LINK } from "../directions/social.direction";
+import { FACEBOOK_LINK, GMAIL_LINK, INSTAGRAM_LINK, YOUTUBE_LINK } from "../directions/social.direction";
 
 // Interface definition
 interface ISocialMenu {
@@ -9,28 +9,42 @@ interface ISocialMenu {
   href: string;
   icon: ReactNode;
 }
+const ICON_SIZE = 'w-8 h-8';
 
 // Array of social menu items
 const listSocialMenu: ISocialMenu[] = [
   {
     title: "Facebook",
     href: `${FACEBOOK_LINK}`,
-    icon: <FontAwesomeIcon icon={faFacebook} />
+    icon: <FontAwesomeIcon
+      icon={faFacebook}
+      className={ICON_SIZE}
+    />
   },
   {
     title: "Instagram",
     href: `${INSTAGRAM_LINK}`,
-    icon: <FontAwesomeIcon icon={faInstagram} />
+    icon: <FontAwesomeIcon
+      icon={faInstagram}
+      className={ICON_SIZE}
+    />
   },
   {
     title: "YouTube",
     href: `${YOUTUBE_LINK}`,
-    icon: <FontAwesomeIcon icon={faYoutube} />
+    icon: <FontAwesomeIcon
+      icon={faYoutube}
+      className={ICON_SIZE}
+    />
   },
   {
     title: "Gmail",
-    href: "mailto:thanhtung2888@gmail.com?subject=Inquiry&body=Hello%20Thanh%20Tung,%0D%0A%0D%0AI%20have%20a%20question%20regarding...",
-    icon: <FontAwesomeIcon icon={faTelegramPlane} />,
+    href: `${GMAIL_LINK}`,
+    icon: <FontAwesomeIcon
+      icon={faTelegramPlane}
+      className={ICON_SIZE}
+    />
+    ,
   }
 ];
 
